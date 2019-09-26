@@ -6,8 +6,7 @@ Please read this [blog post](https://medium.com/the-ethereum-name-service/the-mo
 
 The original data is take from the followings
 
-- [Popular boys and girls names](https://data.world/uscensusbureau/frequently-occurring-surnames-from-the-census-2000
-https://github.com/hadley/data-baby-names)
+- [Popular boys and girls names](https://data.world/uscensusbureau/frequently-occurring-surnames-from-the-census-2000)
 - [Popular last names](https://github.com/hadley/data-baby-names)
 - [Popular website](https://moz.com/top500)
 
