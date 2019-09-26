@@ -1,8 +1,7 @@
-# bids eth max_bid
-# 1 buddha.eth 25000000000000000
+# kebabs.eth received 1 bids and sells for 0.03
+# refer.eth received 2 bids and sells for 0.03
+# sudan.eth received 2 bids and sells for 0.03
 texts = File.open('./dataset/bids.txt').readlines
-
-
 
 # rank, name
 # 3	,james
@@ -37,12 +36,11 @@ def checkNames(name)
 end
 
 parsed = texts.map do|text|
-  # matched = text.match(/INFO:root:Processing (?<count>.*) bids on (?<name>.*)\.eth\.\.\./)
-  bidcount, name, price = text.split(' ')
-  # if matched
-    # [matched['name'].length, matched['count'].to_i, matched['name'], isboy, isgirl, islast, isweb]
-    name = name.split('.')[0]
-    price = price.to_f / (10 ** 18)
+  matched = text.match(/(?<name>.*)\.eth received (?<bidcount>.*) bids and sells for (?<price>.*)/)
+  if matched
+    name = matched['name']
+    price = matched['price'].to_f
+    bidcount = matched['bidcount']
     isboy, isgirl, islast, isweb, domain = checkNames(name)
     {
         'namecount':name.length,
@@ -55,11 +53,11 @@ parsed = texts.map do|text|
         'isweb':isweb,
         'iswebdomain': domain
     }
-  # else
-  #   puts '**** unmatched'  + text
-  #   # [0,0,text]
-  #   false
-  # end
+  else
+    puts '**** unmatched'  + text
+    # [0,0,text]
+    false
+  end
 end.reject{|d| !d }
 
 def display(item, keys)
@@ -111,3 +109,6 @@ end
 
 show_sets(parsed)
 
+puts "Total"
+puts "#{parsed.length}"
+puts parsed.map{|row| row[:highestbid]}.inject(0){|sum, x | sum + x }
