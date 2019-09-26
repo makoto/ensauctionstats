@@ -11,7 +11,7 @@ https://github.com/hadley/data-baby-names)
 - [Popular last names](https://github.com/hadley/data-baby-names)
 - [Popular website](https://moz.com/top500)
 
-The parsed data are here
+The parsed data are here in the following locations.
 
 ```
 $tree dataset/
@@ -30,6 +30,14 @@ All the csv data follows the same convention so it should be relatively easy to 
 1       ,smith
 10      ,wilson
 100     ,fisher
+```
+
+The actual bidding info is in the `bids.txt` in the following format
+
+```
+bids name maxbid
+4 henry.eth 5000000000000000000
+1 gothi.eth 26000000000000000
 ```
 
 ## Running program
