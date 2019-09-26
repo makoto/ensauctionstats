@@ -4,13 +4,33 @@ Please read this [blog post](https://medium.com/the-ethereum-name-service/the-mo
 
 ## Data sources
 
-## Last name
+The original data is take from the followings
 
 - [Popular boys and girls names](https://data.world/uscensusbureau/frequently-occurring-surnames-from-the-census-2000
 https://github.com/hadley/data-baby-names)
 - [Popular last names](https://github.com/hadley/data-baby-names)
 - [Popular website](https://moz.com/top500)
 
+The parsed data are here
+
+```
+$tree dataset/
+dataset/
+├── bids.txt
+├── boys.csv
+├── girls.csv
+├── last.csv
+└── web.csv
+```
+
+All the csv data follows the same convention so it should be relatively easy to add new datasets.
+
+```
+#rank   ,name
+1       ,smith
+10      ,wilson
+100     ,fisher
+```
 
 ## Running program
 
